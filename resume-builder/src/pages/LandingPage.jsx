@@ -34,6 +34,13 @@ const LandingPage = () => {
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [currentPage, setCurrentPage] = useState("login");
 
+  // Redirect logged-in users to dashboard
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [user, navigate]);
+
   // Show toast for email verification redirect flags
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -158,9 +165,18 @@ const LandingPage = () => {
 
             {/* Nav Links */}
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">Features</a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">Pricing</a>
-              <a href="#templates" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">Templates</a>
+              <a href="#features" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium">
+                Features
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-coral transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+              <a href="#pricing" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium">
+                Pricing
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-coral transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+              <a href="#templates" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium">
+                Templates
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-coral transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
             </nav>
 
             {user ? (

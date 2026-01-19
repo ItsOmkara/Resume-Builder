@@ -1,14 +1,14 @@
 import React from "react";
 import ProfileInfoCard from "../Cards/ProfileInfoCard";
 import { Link, useLocation } from "react-router-dom";
-import { Sparkles, FileText, LayoutGrid, Settings } from "lucide-react";
+import { Sparkles, FileText, FileSearch, Settings } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
     { path: "/dashboard", label: "My Resumes", icon: FileText },
-    { path: "/templates", label: "Templates", icon: LayoutGrid },
+    { path: "/ats-checker", label: "ATS Checker", icon: FileSearch },
     { path: "/settings", label: "Settings", icon: Settings },
   ];
 
@@ -32,13 +32,16 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${isActive(link.path)
-                    ? "bg-coral/10 text-coral font-medium"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                className={`group flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${isActive(link.path)
+                  ? "bg-coral/10 text-coral font-medium"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                   }`}
               >
                 <link.icon className="w-4 h-4" />
-                <span className="text-sm">{link.label}</span>
+                <span className="relative text-sm">
+                  {link.label}
+                  <span className={`absolute left-0 -bottom-0.5 h-0.5 bg-current transition-all duration-300 ease-out ${isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                </span>
               </Link>
             ))}
           </nav>

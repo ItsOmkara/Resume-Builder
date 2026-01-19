@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Home/Dashboard";
 import EditResume from "./pages/ResumeUpdate/EditResume";
 import UpgradePage from "./pages/Home/UpgradePage";
+import ATSChecker from "./pages/ATSChecker";
 import UserProvider from "./context/userContext";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/resume/:resumeId" element={<EditResume />} />
             <Route path="/upgrade" element={<UpgradePage />} />
+            <Route path="/ats-checker" element={<ATSChecker />} />
           </Routes>
         </Router>
       </div>

@@ -28,4 +28,7 @@ export const API_PATHS = {
   EMAIL: {
     SEND_RESUME: "/api/email/send-resume",
   },
+  ATS: {
+    ANALYZE: "/api/ats/analyze",
+  },
 };
