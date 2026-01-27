@@ -119,25 +119,60 @@ const LandingPage = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Software Engineer",
-      company: "Google",
-      content: "This resume builder helped me land my dream job! The templates are modern and the interface is incredibly user-friendly.",
-      rating: 5
+      name: "Avery Johnson",
+      handle: "@averywrites",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Avery",
+      content: "This resume builder made undercutting all of our competitors an absolute breeze. Highly recommended!",
+      verified: true
     },
     {
-      name: "Michael Chen",
-      role: "Marketing Manager",
-      company: "Microsoft",
-      content: "I've tried many resume builders, but this one stands out. The live preview feature is a game-changer.",
-      rating: 5
+      name: "Briar Martin",
+      handle: "@neilstellar",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Briar",
+      content: "The templates are modern and the AI suggestions helped me stand out in my applications.",
+      verified: true
+    },
+    {
+      name: "Jordan Lee",
+      handle: "@jordantalks",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan",
+      content: "Finally a resume builder that understands what recruiters are looking for. Game changer!",
+      verified: true
+    },
+    {
+      name: "Sarah Chen",
+      handle: "@sarahcodes",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+      content: "Got my dream job at a top tech company. This tool was instrumental in landing the interview.",
+      verified: true
+    },
+    {
+      name: "Marcus Williams",
+      handle: "@marcusw",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
+      content: "The ATS optimization feature is brilliant. My resume now passes every automated screening.",
+      verified: true
     },
     {
       name: "Emily Davis",
-      role: "UX Designer",
-      company: "Apple",
-      content: "Beautiful templates and seamless editing experience. Highly recommend to anyone looking for a professional resume.",
-      rating: 5
+      handle: "@emilycreates",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily",
+      content: "Beautiful templates and seamless editing experience. Best resume builder I've ever used!",
+      verified: true
+    },
+    {
+      name: "Alex Rivera",
+      handle: "@alexriv",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+      content: "The live preview feature is amazing. I could see exactly how my resume would look in real-time.",
+      verified: true
+    },
+    {
+      name: "Nina Patel",
+      handle: "@ninapatel",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nina",
+      content: "From zero to professional resume in under 15 minutes. Absolutely love this platform!",
+      verified: false
     }
   ];
 
@@ -151,31 +186,31 @@ const LandingPage = () => {
   return (
     <div className="w-full min-h-full bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-gray-100 shadow-sm">
-        <div className="container mx-auto px-6 py-4">
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md border-b border-gray-100/80">
+        <div className="container mx-auto px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-coral to-indigo-500 rounded-lg flex items-center justify-center">
+            <div className="text-2xl font-bold flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-coral via-orange-500 to-amber-400 rounded-xl flex items-center justify-center shadow-lg shadow-coral/25">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <span className="text-gray-900">
+              <span className="text-gray-900 tracking-tight">
                 ResumeFlow
               </span>
             </div>
 
             {/* Nav Links */}
-            <nav className="hidden md:flex items-center gap-8">
-              <a href="#features" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium">
+            <nav className="hidden md:flex items-center gap-10">
+              <a href="#features" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium text-[15px]">
                 Features
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-coral transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-coral to-orange-500 transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
-              <a href="#pricing" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium">
+              <a href="#pricing" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium text-[15px]">
                 Pricing
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-coral transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-coral to-orange-500 transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
-              <a href="#templates" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium">
+              <a href="#templates" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium text-[15px]">
                 Templates
-                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-coral transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-gradient-to-r from-coral to-orange-500 transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
             </nav>
 
@@ -183,10 +218,10 @@ const LandingPage = () => {
               <ProfileInfoCard />
             ) : (
               <button
-                className="bg-coral text-white px-6 py-2.5 rounded-full hover:bg-coral-dark hover:shadow-lg transition-all duration-300 font-semibold"
+                className="bg-gradient-to-r from-coral to-orange-500 text-white px-7 py-3 rounded-xl hover:shadow-xl hover:shadow-coral/30 hover:scale-[1.02] transition-all duration-300 font-semibold text-[15px]"
                 onClick={() => setOpenAuthModal(true)}
               >
-                Start Building
+                Get Started Free
               </button>
             )}
           </div>
@@ -194,31 +229,38 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="hero-gradient relative overflow-hidden mt-16">
-        <div className="container mx-auto px-6 py-16 ">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+      <section className="hero-gradient relative overflow-hidden pt-24 lg:pt-28">
+        <div className="container mx-auto px-6 lg:px-8 py-20 lg:py-24">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
-                Unlock Your Potential.
-                <span className="block text-gray-800">
-                  Craft Your Future.
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200/60 rounded-full px-4 py-2 mb-8 shadow-sm">
+                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="text-sm font-medium text-gray-600">Trusted by 50,000+ professionals worldwide</span>
+              </div>
+
+              <h1 className="section-heading text-gray-900 mb-6">
+                Build a Resume That
+                <span className="block bg-gradient-to-r from-coral via-orange-500 to-amber-500 bg-clip-text text-transparent">
+                  Actually Gets You Hired
                 </span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-xl">
-                AI-powered tools to build a standout resume in minutes.
-                Stand out from the crowd and land your dream job faster.
+              <p className="section-subheading mb-10 max-w-xl mx-auto lg:mx-0">
+                Create ATS-optimized, professionally designed resumes in minutes with our AI-powered builder.
+                Join thousands of job seekers who've landed their dream roles.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                 <button
-                  className="bg-coral text-white px-8 py-3.5 rounded-full hover:bg-coral-dark hover:shadow-xl transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-2 group"
+                  className="bg-gradient-to-r from-coral via-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-coral/40 hover:scale-[1.02] transition-all duration-300 font-semibold text-[17px] flex items-center justify-center gap-2 group"
                   onClick={handleCTA}
                 >
-                  Start For Free
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Start Building For Free
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                 </button>
-                <button className="btn-primary-outline flex items-center justify-center gap-2">
-                  Explore Templates
+                <button className="btn-primary-outline flex items-center justify-center gap-2 text-[17px]">
+                  <FileText className="w-5 h-5" />
+                  View Templates
                 </button>
               </div>
 
@@ -266,25 +308,30 @@ const LandingPage = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
-              Everything You Need to Succeed
+      <section id="features" className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-coral/10 text-coral rounded-full px-4 py-1.5 mb-6 text-sm font-semibold">
+              <Sparkles className="w-4 h-4" />
+              Powerful Features
+            </div>
+            <h2 className="section-heading text-gray-900 mb-6">
+              Everything You Need to Build
+              <span className="block text-gray-600">a Winning Resume</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our powerful features help you create professional resumes that get noticed by employers and ATS systems.
+            <p className="section-subheading max-w-3xl mx-auto">
+              Our comprehensive suite of tools empowers you to create professional, ATS-optimized resumes that capture attention and land interviews.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="group p-8 rounded-2xl bg-white border border-gray-100 hover:border-coral/30 hover:shadow-xl transition-all duration-300 min-h-[220px]">
-                <div className={`mb-5 p-4 rounded-xl w-fit transition-colors ${feature.iconBg}`}>
-                  {React.cloneElement(feature.icon, { className: `w-10 h-10 ${feature.iconColor}` })}
+              <div key={index} className="group premium-card p-8 rounded-2xl min-h-[260px]">
+                <div className={`mb-6 p-4 rounded-2xl w-fit transition-all duration-300 ${feature.iconBg} group-hover:scale-110`}>
+                  {React.cloneElement(feature.icon, { className: `w-8 h-8 ${feature.iconColor}` })}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-500 text-base leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 tracking-tight">{feature.title}</h3>
+                <p className="text-gray-500 text-[15px] leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -292,43 +339,60 @@ const LandingPage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">Simple, Transparent Pricing</h2>
-            <p className="text-lg text-gray-600">Choose the plan that works best for you</p>
+      <section id="pricing" className="py-24 lg:py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 rounded-full px-4 py-1.5 mb-6 text-sm font-semibold">
+              <Award className="w-4 h-4" />
+              Pricing Plans
+            </div>
+            <h2 className="section-heading text-gray-900 mb-6">
+              Simple, Transparent Pricing
+              <span className="block text-gray-600">No Hidden Fees, Ever</span>
+            </h2>
+            <p className="section-subheading max-w-2xl mx-auto">
+              Choose the plan that fits your needs. Start free and upgrade anytime to unlock premium features.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
             {/* Free Plan */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-gray-300 transition-all duration-300">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">Free</h3>
-                <div className="text-4xl font-bold mb-2 text-gray-900">₹0</div>
-                <p className="text-gray-500">Perfect for getting started</p>
+            <div className="premium-card rounded-3xl p-8 lg:p-10">
+              <div className="text-center mb-10">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">Free Forever</h3>
+                <div className="text-5xl font-extrabold mb-2 text-gray-900 tracking-tight">₹0</div>
+                <p className="text-gray-500 text-[15px]">Perfect for getting started</p>
               </div>
 
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-emerald-500" />
-                  <span className="text-gray-700">1 Professional Template</span>
+              <ul className="space-y-5 mb-10">
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                  </div>
+                  <span className="text-gray-700 text-[15px]">1 Professional Template</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-emerald-500" />
-                  <span className="text-gray-700">Basic Editing Tools</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                  </div>
+                  <span className="text-gray-700 text-[15px]">Basic Editing Tools</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-emerald-500" />
-                  <span className="text-gray-700">PDF Download</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                  </div>
+                  <span className="text-gray-700 text-[15px]">PDF Download</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-emerald-500" />
-                  <span className="text-gray-700">Email Support</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-emerald-500" />
+                  </div>
+                  <span className="text-gray-700 text-[15px]">Email Support</span>
                 </li>
               </ul>
 
               <button
-                className="w-full bg-gray-100 text-gray-800 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors"
+                className="w-full bg-gray-100 text-gray-800 py-4 rounded-xl font-semibold text-[15px] hover:bg-gray-200 transition-all duration-200"
                 onClick={handleCTA}
               >
                 Get Started Free
@@ -336,45 +400,56 @@ const LandingPage = () => {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-gradient-to-br from-coral to-orange-500 text-white rounded-2xl p-8 relative overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="absolute top-4 right-4 bg-white text-coral px-3 py-1 rounded-full text-sm font-semibold">
-                Popular
+            <div className="bg-gradient-to-br from-coral via-orange-500 to-amber-500 text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden hover:shadow-2xl hover:shadow-coral/30 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+              <div className="absolute top-5 right-5 bg-white text-coral px-4 py-1.5 rounded-full text-sm font-bold shadow-lg">
+                ⭐ Most Popular
               </div>
 
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-2">Premium</h3>
-                <div className="text-4xl font-bold mb-2">₹999</div>
-                <p className="text-white/80">Unlock all features</p>
+              <div className="text-center mb-10 relative z-10">
+                <h3 className="text-2xl font-bold mb-3">Premium</h3>
+                <div className="text-5xl font-extrabold mb-2 tracking-tight">₹999</div>
+                <p className="text-white/80 text-[15px]">Unlock the full potential</p>
               </div>
 
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-white" />
-                  <span>All Premium Templates</span>
+              <ul className="space-y-5 mb-10 relative z-10">
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[15px]">All Premium Templates</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-white" />
-                  <span>Advanced Editing Tools</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[15px]">AI-Powered Writing Assistant</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-white" />
-                  <span>Multiple Export Formats</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[15px]">Multiple Export Formats</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-white" />
-                  <span>Priority Support</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[15px]">Priority 24/7 Support</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-white" />
-                  <span>Custom Branding</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-[15px]">ATS Optimization Score</span>
                 </li>
               </ul>
 
               <button
-                className="w-full bg-white text-coral py-3 rounded-full font-semibold hover:bg-gray-50 transition-colors"
+                className="w-full bg-white text-coral py-4 rounded-xl font-bold text-[15px] hover:bg-gray-50 hover:shadow-lg transition-all duration-200 relative z-10"
                 onClick={handleCTA}
               >
-                Upgrade to Premium
+                Upgrade to Premium →
               </button>
             </div>
           </div>
@@ -382,14 +457,19 @@ const LandingPage = () => {
       </section>
 
       {/* Templates Section */}
-      <section id="templates" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
-              Professional Resume Templates
+      <section id="templates" className="py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-600 rounded-full px-4 py-1.5 mb-6 text-sm font-semibold">
+              <Grid3X3 className="w-4 h-4" />
+              Template Gallery
+            </div>
+            <h2 className="section-heading text-gray-900 mb-6">
+              Professionally Designed
+              <span className="block text-gray-600">Resume Templates</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Choose from our library of customizable <span className="text-coral font-medium">resume templates</span>—professionally designed to help you create a polished resume for every job you apply for.
+            <p className="section-subheading max-w-3xl mx-auto">
+              Choose from our curated collection of <span className="text-coral font-semibold">ATS-friendly templates</span>—each one crafted by design experts to help you make a lasting first impression.
             </p>
           </div>
 
@@ -494,104 +574,163 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 hero-gradient">
-        <div className="container mx-auto px-6">
+      <section className="py-24 lg:py-32 bg-gray-50 overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">Loved by Professionals</h2>
-            <p className="text-lg text-gray-600">See what our users have to say</p>
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-600 rounded-full px-4 py-1.5 mb-6 text-sm font-semibold">
+              <Star className="w-4 h-4" />
+              Customer Reviews
+            </div>
+            <h2 className="section-heading text-gray-900 mb-6">Loved by Professionals Worldwide</h2>
+            <p className="section-subheading max-w-2xl mx-auto">
+              Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-amber-400 fill-current" />
-                  ))}
+          {/* First Row - Scrolling Left */}
+          <div className="marquee-container mb-6">
+            <div className="marquee-content gap-6">
+              {/* Duplicate testimonials for seamless loop */}
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div key={index} className="testimonial-card">
+                  <div className="flex items-center gap-3 mb-4">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full bg-gray-100"
+                    />
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-semibold text-gray-900">{testimonial.name}</span>
+                        {testimonial.verified && (
+                          <svg className="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        )}
+                      </div>
+                      <span className="text-sm text-gray-500">{testimonial.handle}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">{testimonial.content}</p>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.role} at {testimonial.company}</div>
+              ))}
+            </div>
+          </div>
+
+          {/* Second Row - Scrolling Right */}
+          <div className="marquee-container">
+            <div className="marquee-content-reverse gap-6">
+              {/* Shuffle and duplicate for variety */}
+              {[...testimonials.slice(4), ...testimonials.slice(0, 4), ...testimonials.slice(4), ...testimonials.slice(0, 4)].map((testimonial, index) => (
+                <div key={index} className="testimonial-card">
+                  <div className="flex items-center gap-3 mb-4">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full bg-gray-100"
+                    />
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-semibold text-gray-900">{testimonial.name}</span>
+                        {testimonial.verified && (
+                          <svg className="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        )}
+                      </div>
+                      <span className="text-sm text-gray-500">{testimonial.handle}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">{testimonial.content}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-coral to-orange-500 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to Build Your Future?</h2>
-          <p className="text-xl mb-8 opacity-90">Join thousands of professionals who've landed their dream jobs</p>
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-coral via-orange-500 to-amber-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzMiAyIDIgNC0yIDQtMiA0LTItMi0yLTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
+        <div className="container mx-auto px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl lg:text-5xl font-extrabold mb-6 tracking-tight">
+            Ready to Build Your Future?
+          </h2>
+          <p className="text-xl lg:text-2xl mb-10 opacity-90 max-w-2xl mx-auto font-medium">
+            Join 50,000+ professionals who've landed their dream jobs with ResumeFlow
+          </p>
           <button
-            className="bg-white text-coral px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2 group"
+            className="bg-white text-coral px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 inline-flex items-center gap-3 group"
             onClick={handleCTA}
           >
-            Start Building Now
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            Start Building For Free
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
           </button>
+          <p className="mt-6 text-white/70 text-sm">No credit card required • Free forever plan available</p>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-navy text-white py-16 network-pattern">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-coral to-orange-400 bg-clip-text text-transparent mb-4">
-                ResumeBuilder
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 bg-gradient-to-br from-coral via-orange-500 to-amber-400 rounded-xl flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-xl font-bold">ResumeFlow</span>
               </div>
-              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                Build professional resumes that get you hired. Trusted by professionals worldwide.
+              <p className="text-gray-400 mb-6 text-[15px] leading-relaxed">
+                Build professional, ATS-optimized resumes that get you hired. Trusted by 50,000+ professionals worldwide.
               </p>
               <div className="flex space-x-3">
-                <div className="w-10 h-10 bg-navy-light rounded-full flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">
+                <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all duration-200">
                   <Users className="w-5 h-5 text-gray-400" />
                 </div>
-                <div className="w-10 h-10 bg-navy-light rounded-full flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">
+                <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all duration-200">
                   <TrendingUp className="w-5 h-5 text-gray-400" />
                 </div>
-                <div className="w-10 h-10 bg-navy-light rounded-full flex items-center justify-center hover:bg-gray-700 cursor-pointer transition-colors">
+                <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all duration-200">
                   <Award className="w-5 h-5 text-gray-400" />
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4 text-white">Product</h3>
-              <ul className="space-y-3 text-gray-400 text-sm">
-                <li><a href="#templates" className="hover:text-white transition-colors">Templates</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Examples</a></li>
+              <h3 className="font-bold mb-5 text-white text-[15px]">Product</h3>
+              <ul className="space-y-3 text-gray-400 text-[15px]">
+                <li><a href="#templates" className="hover:text-coral transition-colors">Templates</a></li>
+                <li><a href="#features" className="hover:text-coral transition-colors">Features</a></li>
+                <li><a href="#pricing" className="hover:text-coral transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">Examples</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4 text-white">Support</h3>
-              <ul className="space-y-3 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Tutorials</a></li>
+              <h3 className="font-bold mb-5 text-white text-[15px]">Support</h3>
+              <ul className="space-y-3 text-gray-400 text-[15px]">
+                <li><a href="#" className="hover:text-coral transition-colors">Help Center</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">Contact Us</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">Tutorials</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4 text-white">Company</h3>
-              <ul className="space-y-3 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+              <h3 className="font-bold mb-5 text-white text-[15px]">Company</h3>
+              <ul className="space-y-3 text-gray-400 text-[15px]">
+                <li><a href="#" className="hover:text-coral transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-coral transition-colors">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} ResumeBuilder. Made with ❤️ for professionals worldwide.</p>
+          <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <p>&copy; {new Date().getFullYear()} ResumeFlow. All rights reserved.</p>
+            <p className="mt-4 md:mt-0">Made with ❤️ for professionals worldwide</p>
           </div>
         </div>
       </footer>
