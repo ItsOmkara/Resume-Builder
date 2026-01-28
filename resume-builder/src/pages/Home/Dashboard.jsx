@@ -105,10 +105,10 @@ const Dashboard = () => {
       </div>
 
       {/* Resume Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
         {/* Add New Resume Card */}
         <div
-          className="h-[300px] flex flex-col gap-4 items-center justify-center bg-white rounded-xl border-2 border-dashed border-coral/30 hover:border-coral hover:bg-coral/5 cursor-pointer transition-all duration-300 group"
+          className="h-[200px] sm:h-[250px] md:h-[300px] flex flex-col gap-3 md:gap-4 items-center justify-center bg-white rounded-xl border-2 border-dashed border-coral/30 hover:border-coral hover:bg-coral/5 cursor-pointer transition-all duration-300 group"
           onClick={() => setOpenCreateModal(true)}
         >
           <div className="w-14 h-14 flex items-center justify-center bg-coral/10 group-hover:bg-coral/20 rounded-2xl transition-colors">

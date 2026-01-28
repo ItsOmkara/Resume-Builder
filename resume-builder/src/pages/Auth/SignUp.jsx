@@ -267,7 +267,11 @@ const SignUp = ({ setCurrentPage }) => {
         ) : (
           <div className="text-center">
             <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm p-4 rounded-lg mb-4">
-              {info || "We've sent a verification link to your email. Please verify to log in."}
+              <p className="font-semibold mb-2">Account Created Successfully! 🎉</p>
+              <p>{info || "We've sent a verification link to your email."}</p>
+              <p className="mt-2 text-xs text-emerald-600">
+                Please check your inbox and spam folder. Click the link to verify your email before logging in.
+              </p>
             </div>
             <button
               type="button"

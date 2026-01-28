@@ -22,7 +22,9 @@ import {
   FileText,
   Sparkles,
   Shield,
-  Cloud
+  Cloud,
+  Menu,
+  X
 } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -33,6 +35,7 @@ const LandingPage = () => {
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [currentPage, setCurrentPage] = useState("login");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Redirect logged-in users to dashboard
   useEffect(() => {
@@ -187,18 +190,18 @@ const LandingPage = () => {
     <div className="w-full min-h-full bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md border-b border-gray-100/80">
-        <div className="container mx-auto px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-coral via-orange-500 to-amber-400 rounded-xl flex items-center justify-center shadow-lg shadow-coral/25">
-                <Sparkles className="w-5 h-5 text-white" />
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-3 md:py-4">
+          <div className="flex justify-between items-center gap-3">
+            <div className="text-xl md:text-2xl font-bold flex items-center gap-2 md:gap-3 shrink-0">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-coral via-orange-500 to-amber-400 rounded-xl flex items-center justify-center shadow-lg shadow-coral/25">
+                <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
               <span className="text-gray-900 tracking-tight">
                 ResumeFlow
               </span>
             </div>
 
-            {/* Nav Links */}
+            {/* Nav Links - Desktop */}
             <nav className="hidden md:flex items-center gap-10">
               <a href="#features" className="group relative text-gray-600 hover:text-gray-900 transition-colors font-medium text-[15px]">
                 Features
@@ -214,17 +217,63 @@ const LandingPage = () => {
               </a>
             </nav>
 
-            {user ? (
-              <ProfileInfoCard />
-            ) : (
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center gap-2">
+              {user ? (
+                <ProfileInfoCard />
+              ) : (
+                <button
+                  className="bg-gradient-to-r from-coral to-orange-500 text-white px-4 py-2 md:px-7 md:py-3 rounded-xl hover:shadow-xl hover:shadow-coral/30 hover:scale-[1.02] transition-all duration-300 font-semibold text-sm md:text-[15px] whitespace-nowrap"
+                  onClick={() => setOpenAuthModal(true)}
+                >
+                  <span className="hidden sm:inline">Get Started Free</span>
+                  <span className="sm:hidden">Start Free</span>
+                </button>
+              )}
+
+              {/* Mobile Menu Button */}
               <button
-                className="bg-gradient-to-r from-coral to-orange-500 text-white px-7 py-3 rounded-xl hover:shadow-xl hover:shadow-coral/30 hover:scale-[1.02] transition-all duration-300 font-semibold text-[15px]"
-                onClick={() => setOpenAuthModal(true)}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Toggle menu"
               >
-                Get Started Free
+                {mobileMenuOpen ? (
+                  <X className="w-5 h-5 text-gray-600" />
+                ) : (
+                  <Menu className="w-5 h-5 text-gray-600" />
+                )}
               </button>
-            )}
+            </div>
           </div>
+
+          {/* Mobile Nav Menu */}
+          {mobileMenuOpen && (
+            <nav className="md:hidden mt-3 pt-3 border-t border-gray-100">
+              <div className="flex flex-col gap-1">
+                <a
+                  href="#features"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center px-3 py-2.5 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all font-medium text-sm"
+                >
+                  Features
+                </a>
+                <a
+                  href="#pricing"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center px-3 py-2.5 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all font-medium text-sm"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#templates"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center px-3 py-2.5 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all font-medium text-sm"
+                >
+                  Templates
+                </a>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
